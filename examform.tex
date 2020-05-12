@@ -1,0 +1,127 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%        Examform style with Table Header
+%%%%%%%%%%%%%%%%%%%%          �ѱ�LaTeX2e 0.97 version
+%%%%%%%%%%%%%%%%%%%%             Edited 1998. 5. 7.
+%%%%%%%%%%%%%%%%%%%%               Boo  Deok  Hoon
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Need Package hangul amsmath amssymb srcltx
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Usage %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% \input examform
+%%%%% %%%%% Next variables are optional
+%%%%% \subject{\bf Advanced Calculus 3}
+%%%%% \testyear{1997}
+%%%%% \semester{1 �б�}
+%%%%% \testname{�⸻����}
+%%%%% \testdate{1997. 6. 26.}
+%%%%% \remark{\bf\noindent [����] �������� 3��, ������ ���� 12������. }
+%%%%% \nopagenumber
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt, twocolumn]{article}
+\usepackage{kotex} %% For hLaTeX 0.97
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{pstcol,pst-plot,pst-node,pst-grad,pst-3d} %% PSTrick Package - �׸��׸���
+
+\columnseprule=0.5pt
+\setlength{\textheight}{300truemm}  %%%%% Paper size : B4
+\setlength{\textwidth}{229truemm}
+\setlength{\voffset}{-20truemm}
+\setlength{\hoffset}{-17truemm}
+%\setlength{\headheight}{0truemm}%%%20
+
+\def\dsize{\displaystyle}   %%%%% Macros for AMS TeX
+\def\Bbb#1{\mathbb #1}
+
+
+%%%%% table header
+%\topmargin 10truemm
+%\topskip 7truemm
+%\headsep 17.5truemm %16.75truemm
+%\footskip 0in
+\def\pagenoA{}
+\def\nopagenumber{\gdef\pagenoB{}}    %%%%% Nopagenumber
+   \ifx\nopagenumber\def\pagenoB{\empty}
+       \else\def\pagenoB{\bf Page \thepage}\fi
+\newcommand{\header}{              %%%%%% Header Table
+\renewcommand{\arraystretch}{2.4}
+   \begin{tabular*}{226.2truemm}{|c|c|c|c|c|c|}
+       \multicolumn{6}{c}
+         \pagenoB \hfill {\bf\LARGE \def\empty{}
+                          \if\yr\empty\yr\else\yr\ �г⵵\fi\hspace{3truemm}
+                          \sem  \hspace{3truemm}
+                          \tname}
+                  \hfill  \tdate \\
+         \hline
+           \hbox to 14 truemm{\Large �� ��} & \hbox to 90 truemm{\subj}&
+           \hbox to 24 truemm{\Large ���米��\hss}& \hbox to 38 truemm{}&
+           \hbox to 15 truemm{\Large �� ��\hss}& \hbox to 20 truemm{} \\
+         \hline
+           \multicolumn{4}{|l|}{\Large  �� ��: \hspace{20 mm}
+                                        �� ��: \hspace{15 mm}
+                                        �� ��: \hspace{25 mm}
+                                        �� ��: } &
+           {\Large �� ��} &\\
+         \hline
+   \end{tabular*} }
+
+\newcounter{probno}         %%%%% Problem Environment
+\newenvironment{problem}[1]
+              {\stepcounter{probno}
+               \begin{list}{}{\leftmargin 8mm}%itemize}
+                  \item[{\bf\theprobno.}] #1}
+              {\end{list} }
+
+\makeatletter                %%%%%% Pagestyle EXAM
+\newcommand{\ps@exam}{
+\setlength{\headheight}{20truemm}
+\topmargin 10truemm
+\topskip 7truemm
+\headsep 17.5truemm %16.75truemm
+\footskip 0in
+ \renewcommand{\@oddhead}{\header}
+ \renewcommand{\@evenhead}{\@oddhead}
+ \renewcommand{\@oddfoot}{\pagenoA}
+ \renewcommand{\@evenfoot}{\@oddfoot}}
+\makeatother
+
+\newcommand{\nextheader}{           %%%%%% Header Line
+\begin{tabular}{c}
+   \hbox to 223mm{\pagenoB\hfill\subj\hfill\tdate}\\ \hline
+\end{tabular}}
+
+
+\makeatletter                %%%%%% Pagestyle EXAM
+  \newcommand{\ps@secondside}{
+  \setlength{\headheight}{10truemm}
+  \topmargin 0truemm
+  \headsep 1.5truemm %16.75truemm
+  \footskip 30mm
+  \renewcommand{\@oddhead}{\nextheader }
+  \renewcommand{\@evenhead}{\@oddhead}
+  %\renewcommand{\@oddhead}{\header }
+  %\renewcommand{\@evenhead}{\nextheader }
+  \renewcommand{\@oddfoot}{}
+  \renewcommand{\@evenfoot}{\@oddfoot}}
+\makeatother
+
+\def\subject#1{\gdef\subj{\Large\hfil #1\hfil}}   %%%%% Macros for Header
+\def\testyear#1{\gdef\yr{#1}}
+\def\semester#1{\gdef\sem{#1}}
+\def\testname#1{\gdef\tname{#1}}
+\def\testdate#1{\gdef\tdate{#1}}
+\def\remark#1{\gdef\remark{\noindent#1}}%
+\subject{}
+\testyear{}
+\semester{}
+\testname{}
+\testdate{}
+\remark{}
+
+%\pagestyle{secondside}
+\pagestyle{exam}
+
+\begin{document}
+\baselineskip 20pt
+\thispagestyle{exam}        %%%%% First page style
+\endinput

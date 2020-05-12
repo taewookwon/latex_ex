@@ -1,0 +1,125 @@
+% This is a part of the paper presented at 
+% the KyoungPook Ntnl U in Nov. 2004.
+%
+\documentclass[11pt]{article}
+\usepackage{amsfonts,amsmath,amsthm,latexsym,amssymb}
+\usepackage{graphicx}
+%\usepackage{hfont}
+%\usepackage[default,narrower]{hlatex-interword}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+%\raggedbottom
+\begin{document}
+\title{Drawing a surface in $\mathbb{L}^3$}
+\author{Young Wook Kim}
+\date{Nov., 2004}
+
+\maketitle
+
+This paper is to introduce a known method of 
+drawing minimal surfaces in $\mathbb{E}^3$ and show
+how to use it to find and draw a family of maximal 
+surfaces in the Minkowski space $\mathbb{L}^3$. 
+
+
+
+\section{Maximal surfaces in $\mathbb{E}^3$}
+The following table is a list of
+maximal surfaces in $\boldsymbol{\mathbb{L}^3}$.
+
+
+\renewcommand{\arraystretch}{2}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|l|c|c|}
+\hline
+    \textbf{Surfaces} & \textbf{Riemann Surface} $\boldsymbol{M}$ 
+    & $\boldsymbol{f\,dz}$ & $\boldsymbol{g}$ \\
+\hline\hline
+    catenoid & $\mathbb{S}^2\smallsetminus\{ 0 , \infty \}$ 
+    & $\dfrac{1}{z^2}\,dz$ & $z$ \\
+\hline
+    helicoid & $\mathbb{S}^2\smallsetminus\{ 0 , \infty \}$ 
+    & $\dfrac{i}{z^2}\,dz$ & $z$ \\
+\hline
+    Enneper's surface & $\mathbb{C}$         & $dz$            & $z$ \\
+\hline
+    Trinoid  & $\mathbb{S}^2  
+    \smallsetminus \{1, e^{2\pi i / 3}, e^{4\pi i / 3}  \}$
+        & $\dfrac{1}{(z^3-1)^2}\,dz$ & $z^2$ \\
+\hline
+    Costa's surface & {?} & {?} 
+    & {?}  \\
+\hline
+\end{tabular}
+\end{center}
+\caption{A table}
+\end{table}
+
+
+
+
+Minkowski space-time $\mathbb{L}^3$ is $\mathbb{R}^3=\{(x,y,t)\}$ with 
+pseudo-riemannian metric $dx^2+dy^2-dt^2$.
+Let $M$ be a Riemann surface, and $f,g: M \rightarrow \mathbb{C}$ be 
+analytic functions. Then, the Weierstrass-type formula
+\begin{equation*}
+    Re \left\{ \int_{z_0}^z 
+    \left( (1+g(w)^2) f(w), {\boldsymbol{i}}\,( 1-g(w)^2) f(w) , 
+    2\,g(w)f(w) \right) dw \right\}
+\end{equation*}
+defines a {space-like} maximal immersion into $\mathbb{L}^3$.
+
+For the periods of other components we have
+
+\begin{lemma}\label{Lem:space-period}
+    The period around $\gamma$ for the
+    $xy$-components are 0 iff
+    \begin{equation*}
+        \sigma = \sqrt{\frac{1}{2} \frac{A}{B}}.
+    \end{equation*}
+\end{lemma}
+
+
+\section{The Surface}
+We render the surface graphics
+using a 3D plotting function in Mathematica and we see the surface as above.
+(Figure \ref{Afigure})%
+\footnote{The figure number is not correct here.}
+%\vspace{1cm}
+
+\begin{figure}
+\begin{center}\label{Afigure}
+{\includegraphics[height=6cm]{./surf_max_CHM.eps}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Give the drawing of the surface
+\end{center}
+\caption{A figure}
+\end{figure}
+
+
+
+\section{Final remarks}
+This gives a new surface which is in close relation with the
+Costa-Hoffman-Meeks minimal surface\cite{hoffman_meeks}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{9}
+
+\bibitem{hoffman_meeks}
+Hoffman, D.{} and W.{} H.{} Meeks, III, 
+Embedded minimal surfaces of finite topology, \textsl{Ann.{} of Math.} 
+\textbf{131} (1990), 1--34.
+
+
+\end{thebibliography}
+
+\end{document}
+
+
