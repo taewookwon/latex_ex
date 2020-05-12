@@ -1,0 +1,302 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% 기초과학부 98년 1학기 중간고사
+%%%%%  미분적분학 및 연습
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input examform
+%\nopagenumber
+
+\subject{\bf 이산수학}
+\testyear{2004}
+\semester{1 학기}
+\testname{기말고사}
+\testdate{2004.\ 6.\ 21.}
+%
+\remark{\bf [주의] 문제지는 모두 4장, 문제는 모두 9문제임. }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vspace*{-3mm}
+ \begin{problem}
+ Let $G$ be a  weighted graph with linked representation as
+ follows :
+ \medskip
+
+$ {\scriptsize
+\begin{array}{c|c|}
+\cline{2-2}
+\rule{0pt}{3.5mm}\text{START}&5 \\\cline{2-2}
+\end{array}\quad
+\begin{array}{ l|c|c|c|c|c|c|c|c|c|}
+ \multicolumn{10}{c}{\text{\hspace{20mm}Vertex File}}\smallskip\\
+ \multicolumn{10}{r}
+{\text{\tiny 1\hspace{4.5mm}2\hspace{4.5mm}3\hspace{4.5mm}4\hspace{4.5mm}%
+5\hspace{4.5mm}6\hspace{4.5mm}7\hspace{5mm}8\hspace{5mm}%
+9\,}}\\\cline{2-10}
+%\rule{0pt}{3.5mm}&1&2&3&4&5&6&7&8&9\\\cline{2-10}
+\rule{0pt}{3.5mm}\text{VERTEX}&D&\phantom{A}&B&F&A&\phantom{A}&C&E&G\\\cline{2-10}
+\rule{0pt}{3.5mm}\text{NEXT-V}&8&&7&9&3&&1&4&0\\\cline{2-10}
+\rule{0pt}{3.5mm}\text{PTR}&9&&3&8&6&&10&1&12\\\cline{2-10}
+\end{array}
+}$
+\bigskip\qquad
+$ \scriptsize
+{%%\renewcommand{\arraystretch}{2}
+\begin{array}{l|c|c|c|c|c|c|c|c|c|c|c|c|}
+ \multicolumn{10}{c}{\text{\hspace{40mm}Edge File}}\smallskip\\
+ \multicolumn{13}{r}
+{\text{\tiny 1\hspace{3.5mm}2\hspace{3.5mm}3\hspace{3.5mm}4\hspace{3.5mm}%
+5\hspace{4mm}6\hspace{4mm}7\hspace{4mm}8\hspace{3.5mm}%
+9\hspace{3.3mm}10\hspace{2mm}11\hspace{2mm}12}}\\\cline{2-13}
+%\rule{0pt}{3.5mm}&1&2&3&4&5&6&7&8&9&10&11&12\\\cline{2-13}
+\rule{0pt}{3.5mm}\text{BEG-V}&8&5&3&\phantom{5} &5&5&3&4&1&7&\phantom{5}&9\\\cline{2-13}
+\rule{0pt}{3.5mm}\text{END-V}&9&4&7& &3&1&1&3&8&8& &1\\\cline{2-13}
+\rule{0pt}{3.5mm}\text{NEXT-E}&0&5&7& &0&2&0&0&0&0& &0\\\cline{2-13}
+\rule{0pt}{3.5mm}\text{WEIGHT}&4&3&2& &8&4&1&2&2&5& &1\\\cline{2-13}
+\end{array}
+}$
+
+\begin{itemize}
+\item[{(a)}]  Find the adjacency lists of $G$.
+\item[{(b)}] Draw the graph of $G$.
+\item[{(c)}] Is $G$ unilaterally connected? strongly connected?
+\end{itemize}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+Consider the following digraph $G$.
+\hspace{10mm}
+\begin{figure}[ht]
+\begin{pspicture}(-1.5,-1)(7,5)
+%\psgrid[subgriddiv=1,griddots=10,gridlabels=7pt](1,-1)(7,5)
+\psdot[linewidth=1pt](2,1)%% v3
+\psdot[linewidth=1pt](6,1)%% v4
+\psdot[linewidth=1pt](2,4)%% v1
+\psdot[linewidth=1pt](6,4)%% v2
+\pscurve[linewidth=1pt]{->}(2,1)(1.7,-0.5)(2,-1)(2.3,-0.5)(2.05,0.95)
+\pscurve[linewidth=1pt]{->}(6,1)(5.8,1.5)(5.7,2)(5.7,3)(5.8,3.5)(5.95,3.95)
+\pscurve[linewidth=1pt]{<-}(6.05,1.05)(6.2,1.5)(6.3,2)(6.3,3)(6.2,3.5)(6,4)
+\psline[linewidth=1pt]{->}(2,4)(5.9,4)%%v1v2
+\psline[linewidth=1pt]{->}(2,4)(2,1.05)%%v1v3
+\psline[linewidth=1pt]{->}(2,4)(5.9,1.05)%%v1v4
+\psline[linewidth=1pt]{->}(2,1)(5.9,1)%%v3v4
+\rput(1.7,4.2){$v_1$}
+\rput(1.7,1.2){$v_3$}
+\rput(6.3,4.2){$v_2$}
+\rput(6.3,0.8){$v_4$}
+\end{pspicture}
+\end{figure}
+\begin{itemize}
+\item[{(a)}] Find the adjacency matrix $A$ of the graph $G$.
+\item[{(a)}] Find the path matrix $P$ of the graph $G$.
+\end{itemize}
+\end{problem}
+
+\vspace{140mm}
+
+\begin{problem}
+Find a topological sort $T$ of the following digraph $G$.
+$$
+\begin{array}{rcl}
+G&=&[A:C,S;\ \  B:T,Z;\ \  C:0;\ \  D:Z;\ \  X:A;\ \  \medskip\\
+   &&Y:A;\ \  Z:X,Y;\ \  S:0;\ \  T:Y].
+   \end{array}
+$$
+\end{problem}
+
+\newpage
+
+ \begin{problem}
+Suppose Korea Airlines has ten daily flights as follows:
+\par\hspace{10mm}101 Seoul(S) to Busan(B)
+\par\hspace{10mm}103 Seoul to Gwangju(G)
+\par\hspace{10mm}202 Busan to Seoul
+\par\hspace{10mm}207 Woolsan(W) to Kangneung(K)
+\par\hspace{10mm}303  Mokpo(M) to Seoul
+\par\hspace{10mm}309  Gwangju to Woolsan
+\par\hspace{10mm}109 Gwangju to Jeju(J)
+\par\hspace{10mm}407  Kangneung to Busan
+\par\hspace{10mm}503 Jeju to Seoul
+\par\hspace{10mm}508 Kangneung to Mokpo
+\begin{itemize}
+\item[{(a)}] Describe the data by means of a labelled directed graph $T$.
+\item[{(b)}]  List the  seven vertices in the order B,G,J,K,M,S,W and then describe the graph $T$ in memory using a linked representation.
+\end{itemize}
+\end{problem}
+
+\newpage
+
+ \begin{problem}
+Use the pruning algorithm to find the shortest path from
+home $H$ to a destination $D$ in the following digraph.
+\begin{figure}[ht]
+\begin{pspicture}(0,-1)(11,7)
+%\psgrid[subgriddiv=1,griddots=10,gridlabels=7pt](0,-1)(11,7)
+\psdot[linewidth=1pt](2,3)%% H
+\psdot[linewidth=1pt](4,3)%%
+\psdot[linewidth=1pt](6,3)%%
+\psdot[linewidth=1pt](8,3)%%
+\psdot[linewidth=1pt](10,3)%% D
+\psdot[linewidth=1pt](4,4.5)%%
+\psdot[linewidth=1pt](6,4.5)%%
+\psdot[linewidth=1pt](8,4.5)%%
+\psdot[linewidth=1pt](6,6)%%
+\psdot[linewidth=1pt](4,1.5)%%
+\psdot[linewidth=1pt](6,1.5)%%
+\psdot[linewidth=1pt](8,1.5)%%
+\psdot[linewidth=1pt](6,0)%%
+\psline[linewidth=1pt]{->}(2,3)(3.9,3)
+\psline[linewidth=1pt]{->}(4,3)(5.9,3)
+\psline[linewidth=1pt]{->}(6,3)(7.9,3)
+\psline[linewidth=1pt]{->}(8,3)(9.9,3)
+\psline[linewidth=1pt]{->}(4,4.5)(5.9,4.5)
+\psline[linewidth=1pt]{->}(6,4.5)(7.9,4.5)
+\psline[linewidth=1pt]{->}(4,1.5)(5.9,1.5)
+\psline[linewidth=1pt]{->}(6,1.5)(7.9,1.5)
+\psline[linewidth=1pt]{->}(2,3)(3.9,4.4)
+\psline[linewidth=1pt]{->}(4,4.5)(5.9,5.9)
+\psline[linewidth=1pt]{->}(6,6)(7.9,4.6)
+\psline[linewidth=1pt]{->}(8,4.5)(9.9,3.1)
+\psline[linewidth=1pt]{->}(2,3)(3.9,1.6)
+\psline[linewidth=1pt]{->}(4,1.5)(5.9,0.1)
+\psline[linewidth=1pt]{->}(6,0)(7.9,1.4)
+\psline[linewidth=1pt]{->}(8,1.5)(9.9,2.9)
+\psline[linewidth=1pt]{->}(4,4.5)(4,3.15)
+\psline[linewidth=1pt]{->}(4,3)(4,1.65)
+\psline[linewidth=1pt]{->}(6,6)(6,4.65)
+\psline[linewidth=1pt]{->}(6,4.5)(6,3.15)
+\psline[linewidth=1pt]{->}(6,3)(6,1.65)
+\psline[linewidth=1pt]{->}(6,1.5)(6,0.15)
+\psline[linewidth=1pt]{->}(8,4.5)(8,3.15)
+\psline[linewidth=1pt]{<-}(8,2.85)(8,1.6)
+\psline[linewidth=1pt]{->}(4,4.5)(5.9,3.1)
+\psline[linewidth=1pt]{->}(4,3)(5.9,1.6)
+\psline[linewidth=1pt]{->}(6,3)(7.9,1.6)
+\psline[linewidth=1pt]{->}(6,3)(7.9,4.4)
+\rput(3,4){\small 4}
+\rput(3,3.2){\small 6}
+\rput(3,2.5){\small 2}
+\rput(5,5.5){\small 2}
+\rput(5,4.8){\small 3}
+\rput(5,4){\small 5}
+\rput(5,3.2){\small 4}
+\rput(5,2.5){\small 2}
+\rput(5,1.7){\small 6}
+\rput(5,1){\small 5}
+\rput(7,5.5){\small 7}
+\rput(7,4.8){\small 4}
+\rput(7,4){\small 2}
+\rput(7,3.2){\small 4}
+\rput(7,2.5){\small 3}
+\rput(7,1.7){\small 4}
+\rput(7,1){\small 3}
+\rput(9,4){\small 4}
+\rput(9,3.2){\small 2}
+\rput(9,2.5){\small 3}
+\rput(3.8,3.7){\small 1}
+\rput(3.8,2.3){\small 3}
+\rput(5.8,5.2){\small 3}
+\rput(5.8,3.7){\small 1}
+\rput(5.8,2.3){\small 1}
+\rput(5.8,0.8){\small 1}
+\rput(7.8,3.7){\small 2}
+\rput(7.8,2.3){\small 1}
+\rput(1.5,3){$H$}
+\rput(10.5,3){$D$}
+\end{pspicture}
+\end{figure}
+\end{problem}
+
+\newpage
+
+\begin{problem}  %% Prob 9.38, Page 270
+Consider the weighted graph $G$.
+\begin{figure}[ht]
+\begin{pspicture}(-2,0)(7,5)
+%\psgrid[subgriddiv=1,griddots=10,gridlabels=7pt](1,0)(7,5)
+\psdot[linewidth=1pt](2,1)%% v3
+\psdot[linewidth=1pt](6,1)%% v4
+\psdot[linewidth=1pt](2,4)%% v1
+\psdot[linewidth=1pt](6,4)%% v2
+\pscurve[linewidth=1pt]{<-}(2.1,0.9)(3,0.55)(5,0.6)(6,1)
+\pscurve[linewidth=1pt]{->}(2,4)(3,4.4)(5,4.4)(5.9,4.1)
+%\pscurve[linewidth=1pt]{->}(6,1)(5.8,1.5)(5.7,2)(5.7,3)(5.8,3.5)(5.95,3.95)
+%\pscurve[linewidth=1pt]{<-}(6.05,1.05)(6.2,1.5)(6.3,2)(6.3,3)(6.2,3.5)(6,4)
+\psline[linewidth=1pt]{<-}(2.1,4)(6,4)%%v1v2
+\psline[linewidth=1pt]{<-}(2,3.85)(2,1)%%v1v3
+\psline[linewidth=1pt]{->}(2,1)(5.85,3.9)%%v1v4
+\psline[linewidth=1pt]{->}(2,1)(5.85,1)%%v3v4
+\psline[linewidth=1pt]{->}(6,4)(6,1.15)%%v3v4
+\rput(1.7,4.2){$X$}
+\rput(1.7,1.2){$T$}
+\rput(6.3,4.2){$Y$}
+\rput(6.3,1.2){$S$}
+\rput(1.8,2.5){6}
+\rput(6.2,2.5){2}
+\rput(4,4.7){7}
+\rput(4,4.2){3}
+\rput(4,2.8){1}
+\rput(4,1.2){4}
+\rput(4,0.7){5}
+\end{pspicture}
+\end{figure}
+\begin{itemize}
+\item[{(a)}]  Find the weight matrix $W$ of $G$.
+\item[{(b)}] Find the matrix $Q$ of shortest paths using Warshall's algorithm.
+\end{itemize}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+Consider the algebraic expression
+$$
+E=\frac{(3x-5z)^4}{a(2b+c^2)}
+$$
+\begin{itemize}
+\item[{(a)}] Draw the corresponding binary tree $T$, using a hat ($\wedge$) for exponentiation, an asterisk (*) for multiplication, and a slash (/) for division.
+\item[{(b)}] Find the preorder of $T$.
+\item[{(c)}] Find the sequential representation of $T$ in memory.
+\end{itemize}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+Suppose data items $A,B,C,D,E,F,G$ are given with weights 10,30,5,15,20,15,10, respectively.
+\begin{itemize}
+\item[{(a)}] Find a 2-tree with the given weights and a minimum path length $P$.
+\item[{(b)}] Find a Huffman code for the data.
+\end{itemize}
+\end{problem}
+
+\newpage
+
+\begin{problem}
+Let $T$ be the binary tree stored in memory as follows, where ROOT=14.\bigskip\par
+$
+{%%\renewcommand{\arraystretch}{2}
+\tiny\begin{array}{ c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+ \multicolumn{19}{r}
+{\scriptscriptstyle\text{ 1\hspace{4mm}2\hspace{4.5mm}3\hspace{4mm}4\hspace{4.5mm}%
+5\hspace{4mm}6\hspace{4.5mm}7\hspace{4mm}8\hspace{4.5mm}%
+9\hspace{4mm}10\hspace{3.5mm}11\hspace{3mm}12\hspace{3mm}13\hspace{3mm}14\hspace{3mm}15\hspace{3mm}16
+\hspace{2mm}17\hspace{2.5mm}18}}\\\cline{2-19}
+\rule{0pt}{3.5mm}\text{I}&H&R&\phantom{a}&P&B&\phantom{a}&E&\phantom{a}
+                        &C&F&Q&S&\phantom{a}&A&K&L&\phantom{a}&D\\\cline{2-19}
+\rule{0pt}{3.5mm}\text{L} &4&0& &0&18& &1& &0&15&0&0& &5&2&0& &0\\\cline{2-19}
+\rule{0pt}{3.5mm}\text{R}&11&0& &0&7& &0& &10&16&12&0& &9&0&0& &0\\\cline{2-19}
+\multicolumn{19}{c}{}\\
+\multicolumn{19}{c}
+{\phantom{A}\scriptstyle\text{ I = INFO, L = LEFT, R = RIGHT}}
+\end{array}
+}$
+
+\begin{itemize}
+\item[{(a)}] Draw the diagram of $T$.
+\item[{(b)}] List the nodes of $T$ in (i) preorder, (ii) inorder, (iii) postorder.
+\end{itemize}
+\end{problem}
+
+
+\end{document}
